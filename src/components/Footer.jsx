@@ -24,8 +24,7 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="footer-logo">
-              <span className="logo-ee">E&E</span>
-              <span className="logo-sub">Total Contracting Ltd.</span>
+              <img src="/rick_logo.png" alt="E&E Total Contracting Ltd." className="logo-img" />
             </div>
             <p className="footer-tagline">
               Janitorial Cleaning • Power Washing • Renovations

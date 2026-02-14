@@ -23,19 +23,11 @@
   margin-bottom: 16px;
 }
 
-.footer-logo .logo-ee {
-  font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 900;
-  color: var(--color-white);
-}
-
-.footer-logo .logo-sub {
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.footer-logo .logo-img {
+  height: 70px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
   color: var(--color-primary);
 }
 

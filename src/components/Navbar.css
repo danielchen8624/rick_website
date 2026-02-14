@@ -27,30 +27,13 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logo-ee {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--color-dark);
-  letter-spacing: -1px;
-}
-
-.logo-sub {
-  font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--color-primary);
+.navbar-logo .logo-img {
+  height: 85px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .navbar-links {
@@ -204,7 +187,7 @@
     height: 65px;
   }
 
-  .logo-ee {
-    font-size: 24px;
+  .navbar-logo .logo-img {
+    height: 45px;
   }
 }

@@ -35,10 +35,7 @@ const Navbar = () => {
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container navbar-inner">
           <a href="#hero" className="navbar-logo" onClick={(e) => handleNavClick(e, 'hero')}>
-            <div className="logo-text">
-              <span className="logo-ee">E&E</span>
-              <span className="logo-sub">Total Contracting</span>
-            </div>
+            <img src="/rick_logo.png" alt="E&E Total Contracting" className="logo-img" />
           </a>
 
           <ul className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
