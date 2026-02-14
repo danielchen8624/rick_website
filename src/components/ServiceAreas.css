@@ -1,0 +1,75 @@
+/* ============================================
+   Service Areas Section
+   ============================================ */
+
+.service-areas {
+  padding: var(--section-padding);
+  background: var(--color-cream);
+}
+
+.areas-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.areas-text h2 {
+  margin-bottom: 20px;
+}
+
+.areas-text p {
+  font-size: 16px;
+  color: var(--color-gray-700);
+  line-height: 1.8;
+}
+
+.areas-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.area-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  transition: all var(--transition-base);
+  cursor: default;
+}
+
+.area-tag:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(162, 192, 55, 0.3);
+}
+
+.area-tag svg {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.area-tag:hover svg {
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .areas-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .areas-tags {
+    justify-content: center;
+  }
+}

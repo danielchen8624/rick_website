@@ -1,0 +1,124 @@
+/* ============================================
+   Renovations Section
+   ============================================ */
+
+.renovations {
+  padding: var(--section-padding);
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.reno-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.reno-header .section-title {
+  color: var(--color-white);
+}
+
+.reno-header .section-description {
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.reno-specialties {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.reno-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 48px 36px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.reno-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary);
+  transform: translateY(-6px);
+}
+
+.reno-card-icon {
+  color: var(--color-primary);
+  margin-bottom: 24px;
+  transition: transform var(--transition-base);
+}
+
+.reno-card:hover .reno-card-icon {
+  transform: scale(1.15);
+}
+
+.reno-card h3 {
+  font-size: 20px;
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+.reno-card p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+}
+
+.reno-capabilities {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 48px;
+}
+
+.reno-capabilities h3 {
+  font-size: 22px;
+  color: var(--color-white);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.capability-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 1024px) {
+  .reno-specialties {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .reno-specialties {
+    grid-template-columns: 1fr;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reno-capabilities {
+    padding: 32px 24px;
+  }
+
+  .reno-card {
+    padding: 36px 28px;
+  }
+}
