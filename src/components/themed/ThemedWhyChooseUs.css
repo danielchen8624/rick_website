@@ -1,0 +1,76 @@
+/* ============================================
+   Themed Why Choose Us — Janitorial Focus
+   ============================================ */
+
+.themed-why-choose-us {
+  padding: var(--section-padding);
+  background: var(--color-cream);
+}
+
+.themed-why-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.themed-why-header .section-description {
+  margin: 0 auto;
+}
+
+.themed-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.themed-why-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  border: 1px solid transparent;
+}
+
+.themed-why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(14, 116, 144, 0.15);
+}
+
+.themed-why-card-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(14, 116, 144, 0.1), rgba(14, 165, 233, 0.08));
+  color: var(--color-primary);
+  transition: all var(--transition-base);
+}
+
+.themed-why-card:hover .themed-why-card-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: scale(1.08);
+}
+
+.themed-why-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.themed-why-card p {
+  font-size: 15px;
+  color: var(--color-gray-500);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .themed-why-grid {
+    grid-template-columns: 1fr;
+  }
+}

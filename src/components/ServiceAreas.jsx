@@ -20,9 +20,9 @@ const ServiceAreas = () => {
         <div className="areas-content">
           <div className="areas-text fade-in-left">
             <span className="section-subtitle">Areas We Serve</span>
-            <h2 className="section-title">No Job Is Too Small Or Too Far… From Whitby</h2>
+            <h2 className="section-title">Keeping Facilities Spotless Across the Region</h2>
             <p>
-              Although we are based in Whitby in the Regional Municipality of Durham, we are willing to travel to help our clients. Below are the areas where most customers get in touch with E&E Total Contracting Ltd.
+              Based in Whitby, our janitorial teams serve businesses and facilities throughout Durham Region and the Greater Toronto Area. We provide reliable, scheduled cleaning services wherever you need us.
             </p>
           </div>
           <div className="areas-tags fade-in-right">

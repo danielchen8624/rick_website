@@ -1,0 +1,216 @@
+/* ============================================
+   Themed Services — Janitorial Focus
+   ============================================ */
+
+.themed-services {
+  padding: var(--section-padding);
+  background: var(--color-white);
+}
+
+.themed-services-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.themed-services-header .section-description {
+  margin: 0 auto;
+}
+
+/* Primary service — large featured card */
+.themed-primary-service {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 50px;
+  background: var(--color-white);
+  border: 1px solid rgba(14, 116, 144, 0.12);
+}
+
+.themed-primary-image {
+  position: relative;
+  min-height: 400px;
+}
+
+.themed-primary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.themed-primary-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 15px rgba(14, 116, 144, 0.4);
+}
+
+.themed-primary-content {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.themed-primary-content h3 {
+  font-size: 26px;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.themed-primary-content p {
+  color: var(--color-gray-500);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.themed-primary-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.themed-primary-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+/* "Also Available" label */
+.themed-secondary-label {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.themed-secondary-label span {
+  display: inline-block;
+  padding: 6px 24px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-full);
+  background: var(--color-gray-100);
+}
+
+/* Secondary cards — smaller */
+.themed-secondary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.themed-secondary-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  transition: all var(--transition-base);
+}
+
+.themed-secondary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.themed-secondary-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.themed-secondary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.themed-secondary-card:hover .themed-secondary-image img {
+  transform: scale(1.05);
+}
+
+.themed-secondary-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.7), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.themed-secondary-badge {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0.5px;
+}
+
+.themed-secondary-content {
+  padding: 24px;
+}
+
+.themed-secondary-content p {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.themed-secondary-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.themed-secondary-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .themed-primary-service {
+    grid-template-columns: 1fr;
+  }
+
+  .themed-primary-image {
+    min-height: 250px;
+  }
+
+  .themed-primary-features {
+    grid-template-columns: 1fr;
+  }
+
+  .themed-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+}

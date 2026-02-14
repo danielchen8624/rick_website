@@ -1,25 +1,26 @@
 /* ============================================
-   E&E Total Contracting — Design System
+   E&E Total Contracting — Janitorial Services
+   Design System
    ============================================ */
 
 :root {
-  /* Colors */
-  --color-primary: #a2c037;
-  --color-primary-dark: #8ba82f;
-  --color-primary-light: #c4d96b;
-  --color-dark: #1a1a2e;
-  --color-dark-secondary: #16213e;
-  --color-cream: #faf3e0;
-  --color-cream-light: #fdf8ef;
-  --color-gold: #d4a843;
+  /* Colors — Deep Teal (clean, professional, trustworthy) */
+  --color-primary: #0e7490;
+  --color-primary-dark: #0c5f74;
+  --color-primary-light: #67e8f9;
+  --color-dark: #0f172a;
+  --color-dark-secondary: #1e293b;
+  --color-cream: #f0fdfa;
+  --color-cream-light: #f8fafc;
+  --color-accent: #0ea5e9;
+  --color-gold: #0ea5e9;
   --color-white: #ffffff;
-  --color-gray-100: #f7f7f7;
-  --color-gray-200: #e8e8e8;
-  --color-gray-300: #d1d1d1;
-  --color-gray-500: #888888;
-  --color-gray-700: #444444;
-  --color-gray-900: #1a1a1a;
-  --color-blue-accent: #3a7bd5;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-500: #64748b;
+  --color-gray-700: #334155;
+  --color-gray-900: #0f172a;
 
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
@@ -35,11 +36,11 @@
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.16);
-  --shadow-xl: 0 12px 60px rgba(0, 0, 0, 0.2);
+  /* Shadows — cooler tones */
+  --shadow-sm: 0 2px 8px rgba(14, 116, 144, 0.06);
+  --shadow-md: 0 4px 20px rgba(14, 116, 144, 0.10);
+  --shadow-lg: 0 8px 40px rgba(14, 116, 144, 0.14);
+  --shadow-xl: 0 12px 60px rgba(14, 116, 144, 0.18);
 
   /* Border radius */
   --radius-sm: 6px;
@@ -152,13 +153,13 @@ button {
 .btn-primary {
   background: var(--color-primary);
   color: var(--color-white);
-  box-shadow: 0 4px 15px rgba(162, 192, 55, 0.35);
+  box-shadow: 0 4px 15px rgba(14, 116, 144, 0.35);
 }
 
 .btn-primary:hover {
   background: var(--color-primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(162, 192, 55, 0.45);
+  box-shadow: 0 6px 25px rgba(14, 116, 144, 0.45);
 }
 
 .btn-outline {

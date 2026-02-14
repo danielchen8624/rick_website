@@ -1,0 +1,112 @@
+/* ============================================
+   Themed Footer — Janitorial Focus
+   ============================================ */
+
+.themed-footer {
+  background: var(--color-dark);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 80px 0 0;
+}
+
+.themed-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Brand */
+.themed-footer-logo .logo-img {
+  height: 48px;
+  width: auto;
+  margin-bottom: 16px;
+}
+
+.themed-footer-tagline {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.themed-footer-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Link columns */
+.themed-footer-links-col h4,
+.themed-footer-contact-col h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.themed-footer-links-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.themed-footer-links-col a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--transition-fast);
+}
+
+.themed-footer-links-col a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Contact column */
+.themed-footer-contact-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.themed-footer-contact-col li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.themed-footer-contact-col svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.themed-footer-contact-col a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--transition-fast);
+}
+
+.themed-footer-contact-col a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Bottom bar */
+.themed-footer-bottom {
+  padding: 24px 0;
+  text-align: center;
+}
+
+.themed-footer-bottom p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  .themed-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

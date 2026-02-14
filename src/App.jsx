@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import WhyChooseUs from './components/WhyChooseUs';
-import About from './components/About';
-import Services from './components/Services';
-import Renovations from './components/Renovations';
+import ThemedNavbar from './components/themed/ThemedNavbar';
+import ThemedHero from './components/themed/ThemedHero';
+import ThemedWhyChooseUs from './components/themed/ThemedWhyChooseUs';
+import ThemedAbout from './components/themed/ThemedAbout';
+import ThemedServices from './components/themed/ThemedServices';
 import ServiceAreas from './components/ServiceAreas';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
+import ThemedFooter from './components/themed/ThemedFooter';
 import './App.css';
 
 function App() {
@@ -35,17 +34,16 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
+      <ThemedNavbar />
       <main>
-        <Hero />
-        <WhyChooseUs />
-        <About />
-        <Services />
-        <Renovations />
+        <ThemedHero />
+        <ThemedWhyChooseUs />
+        <ThemedAbout />
+        <ThemedServices />
         <ServiceAreas />
         <Contact />
       </main>
-      <Footer />
+      <ThemedFooter />
     </div>
   );
 }

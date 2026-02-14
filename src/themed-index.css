@@ -1,0 +1,58 @@
+/* ============================================
+   E&E Total Contracting — Janitorial Theme
+   Design System Override
+   ============================================ */
+
+:root {
+  /* Primary — Deep Teal (clean, professional, trustworthy) */
+  --color-primary: #0e7490;
+  --color-primary-dark: #0c5f74;
+  --color-primary-light: #67e8f9;
+
+  /* Dark tones — Slate */
+  --color-dark: #0f172a;
+  --color-dark-secondary: #1e293b;
+
+  /* Light backgrounds — Minty whites */
+  --color-cream: #f0fdfa;
+  --color-cream-light: #f8fafc;
+
+  /* Accent */
+  --color-accent: #0ea5e9;
+  --color-gold: #0ea5e9;
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-500: #64748b;
+  --color-gray-700: #334155;
+  --color-gray-900: #0f172a;
+
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --section-padding: 100px 0;
+  --container-max: 1200px;
+  --container-padding: 0 24px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Shadows — cooler tones */
+  --shadow-sm: 0 2px 8px rgba(14, 116, 144, 0.06);
+  --shadow-md: 0 4px 20px rgba(14, 116, 144, 0.10);
+  --shadow-lg: 0 8px 40px rgba(14, 116, 144, 0.14);
+  --shadow-xl: 0 12px 60px rgba(14, 116, 144, 0.18);
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 50px;
+}

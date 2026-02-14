@@ -6,9 +6,9 @@ const Contact = () => {
       <div className="container">
         <div className="contact-header fade-in">
           <span className="section-subtitle">Get In Touch</span>
-          <h2 className="section-title">Reach Out Today!</h2>
+          <h2 className="section-title">Request a Free Cleaning Quote</h2>
           <p className="section-description">
-            Enhance your property's potential with our expert services. Contact us for a free consultation and quote.
+            Ready for a spotless facility? Contact us today for a free consultation and customized janitorial cleaning quote.
           </p>
         </div>
 
