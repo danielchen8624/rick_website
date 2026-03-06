@@ -1,12 +1,78 @@
-import janitorialImg from '../assets/images/janitorial.png';
-import powerwashImg from '../assets/images/powerwash.png';
-import renovationImg from '../assets/images/renovation.png';
+import { useState } from 'react';
+import janitorialImg from '../assets/images/janitorial.jpg';
+import janitorialBeforeImg from '../assets/images/gallery/hallway-before.jpg';
+import powerwashImg from '../assets/images/powerwash.jpg';
+import renovationImg from '../assets/images/renovation.jpg';
+import renovationBeforeImg from '../assets/images/gallery/bathroom-before.jpg';
 import './Services.css';
+
+const BeforeAfterImage = ({ beforeImage, afterImage, alt, className, expandable, children }) => {
+  const [showBefore, setShowBefore] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const currentSrc = showBefore ? (beforeImage || afterImage) : afterImage;
+  const currentAlt = beforeImage ? `${alt} — ${showBefore ? 'Before' : 'After'}` : alt;
+
+  const handleImageClick = (e) => {
+    if (expandable) {
+      e.stopPropagation();
+      setLightboxOpen(true);
+    }
+  };
+
+  const closeLightbox = () => setLightboxOpen(false);
+
+  return (
+    <>
+      <div className={`${className}${expandable ? ' expandable-image' : ''}`}>
+        <img src={currentSrc} alt={currentAlt} onClick={handleImageClick} />
+        {beforeImage && (
+          <div className="before-after-toggle">
+            <button
+              className={`ba-btn ${!showBefore ? 'ba-btn-active' : ''}`}
+              onClick={(e) => { e.stopPropagation(); setShowBefore(false); }}
+            >After</button>
+            <button
+              className={`ba-btn ${showBefore ? 'ba-btn-active' : ''}`}
+              onClick={(e) => { e.stopPropagation(); setShowBefore(true); }}
+            >Before</button>
+          </div>
+        )}
+        {children}
+      </div>
+
+      {expandable && lightboxOpen && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+            <img src={currentSrc} alt={currentAlt} className="lightbox-img" />
+            {beforeImage && (
+              <div className="lightbox-toggle">
+                <button
+                  className={`ba-btn ${!showBefore ? 'ba-btn-active' : ''}`}
+                  onClick={() => setShowBefore(false)}
+                >After</button>
+                <button
+                  className={`ba-btn ${showBefore ? 'ba-btn-active' : ''}`}
+                  onClick={() => setShowBefore(true)}
+                >Before</button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 const Services = () => {
   const services = [
     {
       image: janitorialImg,
+      beforeImage: janitorialBeforeImg,
       title: 'Janitorial Cleaning',
       subtitle: 'Reliable Janitorial & Commercial Cleaning Services',
       desc: 'Maintain a clean, sanitary space with professional cleaning plans built around your schedule. We handle offices, retail spaces, multi-unit buildings, and more with commercial-grade equipment and trained staff.',
@@ -14,6 +80,7 @@ const Services = () => {
     },
     {
       image: powerwashImg,
+      expandable: true,
       title: 'Power Washing',
       subtitle: 'Power Washing & Exterior Cleaning Experts',
       desc: 'Restore your property\'s exterior with commercial-grade power washing equipment and trained technicians. Remove built-up grime, mold, algae, and stains from any surface.',
@@ -21,6 +88,8 @@ const Services = () => {
     },
     {
       image: renovationImg,
+      beforeImage: renovationBeforeImg,
+      expandable: true,
       title: 'Renovation',
       subtitle: 'Professional Renovation Services in Whitby & the GTA',
       desc: 'High-quality renovation services for residential and commercial clients. From complete kitchen remodels to basement finishing, we bring your vision to life with expert craftsmanship.',
@@ -41,12 +110,17 @@ const Services = () => {
         <div className="services-grid">
           {services.map((s, i) => (
             <div key={i} className="service-card fade-in" style={{ transitionDelay: `${i * 0.2}s` }}>
-              <div className="service-card-image">
-                <img src={s.image} alt={s.title} />
+              <BeforeAfterImage
+                beforeImage={s.beforeImage}
+                afterImage={s.image}
+                alt={s.title}
+                className="service-card-image"
+                expandable={s.expandable}
+              >
                 <div className="service-card-overlay">
                   <span className="service-badge">{s.title}</span>
                 </div>
-              </div>
+              </BeforeAfterImage>
               <div className="service-card-content">
                 <h3>{s.subtitle}</h3>
                 <p>{s.desc}</p>
