@@ -1,10 +1,78 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import janitorialImg from '../assets/images/janitorial.jpg';
 import janitorialBeforeImg from '../assets/images/gallery/hallway-before.jpg';
-import powerwashImg from '../assets/images/powerwash.jpg';
+import powerwashImg1 from '../assets/images/powerwash1.jpg';
+import powerwashImg2 from '../assets/images/powerwash2.jpg';
+import powerwashImg3 from '../assets/images/powerwash3.jpg';
 import renovationImg from '../assets/images/renovation.jpg';
 import renovationBeforeImg from '../assets/images/gallery/bathroom-before.jpg';
+import bathroomImg from '../assets/images/bathroom.jpg';
 import './Services.css';
+
+const ImageGallery = ({ images, alt, className, expandable, children }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  const handleImageClick = (e) => {
+    if (expandable) {
+      e.stopPropagation();
+      setLightboxOpen(true);
+    }
+  };
+
+  const closeLightbox = () => setLightboxOpen(false);
+
+  const goTo = (dir, e) => {
+    if (e) e.stopPropagation();
+    setCurrentIndex((prev) => (prev + dir + images.length) % images.length);
+  };
+
+  return (
+    <>
+      <div className={`${className}${expandable ? ' expandable-image' : ''}`}>
+        <img src={images[currentIndex]} alt={`${alt} ${currentIndex + 1}`} onClick={handleImageClick} />
+        {images.length > 1 && (
+          <div className="gallery-nav">
+            <button className="gallery-btn" onClick={(e) => goTo(-1, e)} aria-label="Previous">&#8249;</button>
+            <span className="gallery-dots">
+              {images.map((_, i) => (
+                <span key={i} className={`gallery-dot${i === currentIndex ? ' active' : ''}`} onClick={(e) => { e.stopPropagation(); setCurrentIndex(i); }} />
+              ))}
+            </span>
+            <button className="gallery-btn" onClick={(e) => goTo(1, e)} aria-label="Next">&#8250;</button>
+          </div>
+        )}
+        {children}
+      </div>
+
+      {expandable && lightboxOpen && createPortal(
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+            <img src={images[currentIndex]} alt={`${alt} ${currentIndex + 1}`} className="lightbox-img" />
+            {images.length > 1 && (
+              <div className="lightbox-toggle">
+                <button className="gallery-btn" onClick={() => goTo(-1)}>&#8249;</button>
+                <span className="gallery-dots">
+                  {images.map((_, i) => (
+                    <span key={i} className={`gallery-dot${i === currentIndex ? ' active' : ''}`} onClick={() => setCurrentIndex(i)} />
+                  ))}
+                </span>
+                <button className="gallery-btn" onClick={() => goTo(1)}>&#8250;</button>
+              </div>
+            )}
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
+  );
+};
 
 const BeforeAfterImage = ({ beforeImage, afterImage, alt, className, expandable, children }) => {
   const [showBefore, setShowBefore] = useState(false);
@@ -40,7 +108,7 @@ const BeforeAfterImage = ({ beforeImage, afterImage, alt, className, expandable,
         {children}
       </div>
 
-      {expandable && lightboxOpen && (
+      {expandable && lightboxOpen && createPortal(
         <div className="lightbox-overlay" onClick={closeLightbox}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">
@@ -62,7 +130,8 @@ const BeforeAfterImage = ({ beforeImage, afterImage, alt, className, expandable,
               </div>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
@@ -79,7 +148,7 @@ const Services = () => {
       features: ['Office & Commercial Cleaning', 'Floor Care & Maintenance', 'Sanitization & Disinfection', 'Scheduled Cleaning Programs'],
     },
     {
-      image: powerwashImg,
+      images: [powerwashImg1, powerwashImg2, powerwashImg3],
       expandable: true,
       title: 'Power Washing',
       subtitle: 'Power Washing & Exterior Cleaning Experts',
@@ -87,7 +156,7 @@ const Services = () => {
       features: ['Driveway & Walkway Cleaning', 'Building Exterior Washing', 'Deck & Patio Restoration', 'Graffiti Removal'],
     },
     {
-      image: renovationImg,
+      image: bathroomImg,
       beforeImage: renovationBeforeImg,
       expandable: true,
       title: 'Renovation',
@@ -110,17 +179,30 @@ const Services = () => {
         <div className="services-grid">
           {services.map((s, i) => (
             <div key={i} className="service-card fade-in" style={{ transitionDelay: `${i * 0.2}s` }}>
-              <BeforeAfterImage
-                beforeImage={s.beforeImage}
-                afterImage={s.image}
-                alt={s.title}
-                className="service-card-image"
-                expandable={s.expandable}
-              >
-                <div className="service-card-overlay">
-                  <span className="service-badge">{s.title}</span>
-                </div>
-              </BeforeAfterImage>
+              {s.images ? (
+                <ImageGallery
+                  images={s.images}
+                  alt={s.title}
+                  className="service-card-image"
+                  expandable={s.expandable}
+                >
+                  <div className="service-card-overlay">
+                    <span className="service-badge">{s.title}</span>
+                  </div>
+                </ImageGallery>
+              ) : (
+                <BeforeAfterImage
+                  beforeImage={s.beforeImage}
+                  afterImage={s.image}
+                  alt={s.title}
+                  className="service-card-image"
+                  expandable={s.expandable}
+                >
+                  <div className="service-card-overlay">
+                    <span className="service-badge">{s.title}</span>
+                  </div>
+                </BeforeAfterImage>
+              )}
               <div className="service-card-content">
                 <h3>{s.subtitle}</h3>
                 <p>{s.desc}</p>
