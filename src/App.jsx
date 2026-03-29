@@ -6,6 +6,7 @@ import ThemedAbout from './components/themed/ThemedAbout';
 import ThemedServices from './components/themed/ThemedServices';
 import ServiceAreas from './components/ServiceAreas';
 import Contact from './components/Contact';
+import ThemedReviews from './components/themed/ThemedReviews';
 import ThemedFooter from './components/themed/ThemedFooter';
 import './App.css';
 
@@ -41,6 +42,7 @@ function App() {
         <ThemedAbout />
         <ThemedServices />
         <ServiceAreas />
+        <ThemedReviews />
         <Contact />
       </main>
       <ThemedFooter />
