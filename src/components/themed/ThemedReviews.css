@@ -54,10 +54,24 @@
   margin-bottom: 20px;
 }
 
+.themed-review-card .review-signature {
+  text-align: right;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-gray-200);
+}
+
 .themed-review-card .review-author {
   font-weight: 600;
   font-size: 16px;
   color: var(--color-dark);
+}
+
+.themed-review-card .review-company {
+  font-size: 14px;
+  color: var(--color-primary);
+  font-style: italic;
+  margin-top: 2px;
 }
 
 .themed-review-card .review-date {

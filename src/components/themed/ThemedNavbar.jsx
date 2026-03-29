@@ -26,6 +26,7 @@ const ThemedNavbar = () => {
     { label: 'About', target: 'about' },
     { label: 'Services', target: 'services' },
     { label: 'Areas', target: 'areas' },
+    { label: 'Testimonials', target: 'reviews' },
     { label: 'Contact', target: 'contact' },
   ];
 
