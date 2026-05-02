@@ -8,9 +8,21 @@ import ServiceAreas from './components/ServiceAreas';
 import Contact from './components/Contact';
 import ThemedReviews from './components/themed/ThemedReviews';
 import ThemedFooter from './components/themed/ThemedFooter';
+import BusinessCard from './components/BusinessCard';
 import './App.css';
 
+const CARD_PATHS = ['/card', '/ricardo', '/contact-card'];
+
 function App() {
+  const path = window.location.pathname.replace(/\/$/, '').toLowerCase();
+  if (CARD_PATHS.includes(path)) {
+    return <BusinessCard />;
+  }
+
+  return <MainSite />;
+}
+
+function MainSite() {
   useEffect(() => {
     // Scroll-triggered fade-in animations
     const observer = new IntersectionObserver(
